@@ -1,0 +1,21 @@
+{
+  "prjname": "mysite",
+  "appname": "noi",
+  "use_app_dev": "y",
+  "use_lino_dev": "n",
+  "server_url": "https://{{cookiecutter.prjname}}.mydomain.com",
+  "admin_full_name": "Joe Dow",
+  "admin_email": "joe@example.com",
+//  "git_clone_url": "https://github.com/lino-framework/{{ cookiecutter.appname }}.git",
+  "db_engine": ["mysql", "postgresql"],
+  "db_user": "lino",
+  "db_password": "1234",
+  "db_name": "{{cookiecutter.prjname}}",
+//  "projects_root": "/usr/local/lino",
+//  "projects_prefix": "prod_sites",
+//  "backups_dir":"/var/backups/lino",
+//  "pyenvdir":"env",
+//  "repositories_dir" : "repositories",
+  "usergroup": "www-data"
+
+}
