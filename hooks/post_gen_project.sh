@@ -15,7 +15,7 @@ pip3 install virtualenv
 virtualenv $ENVDIR --python=python3
 . $ENVDIR/bin/activate
 
-pip3 install -U pip3
+pip3 install -U pip
 pip3 install -U setuptools
 
 mkdir $REPOSDIR
