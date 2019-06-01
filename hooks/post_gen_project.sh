@@ -10,11 +10,13 @@ USERGROUP=www-data
 sudo chown :$USERGROUP .
 sudo chmod g+wx .
 
+pip3 install virtualenv
+
 virtualenv $ENVDIR --python=python3
 . $ENVDIR/bin/activate
 
-pip install -U pip
-pip install -U setuptools
+pip3 install -U pip3
+pip3 install -U setuptools
 
 mkdir $REPOSDIR
 cd $REPOSDIR
