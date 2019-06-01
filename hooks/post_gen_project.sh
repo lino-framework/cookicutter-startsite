@@ -7,8 +7,8 @@ ENVDIR=env
 REPOSDIR=repositories
 USERGROUP=www-data
 
-sudo chown :$USERGROUP .
-sudo chmod g+wx .
+chown :$USERGROUP .
+chmod g+wx .
 
 pip3 install virtualenv
 
