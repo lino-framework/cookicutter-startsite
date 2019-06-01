@@ -48,3 +48,4 @@ libreoffice '--accept=socket,host=127.0.0.1,port=8100;urp;' &
 apt-get install redis-server ; redis-server &
 pip3 install -e svn+https://svn.forge.pallavi.be/appy-dev/dev1#egg=appy
 pip3 install uwsgi
+
