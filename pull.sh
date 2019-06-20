@@ -33,9 +33,9 @@ function pull() {
 }
 
 
-{% if cookiecutter.use_app_dev %}
-pull repositories/{{cookiecutter.prjname}}
-{% endif %}
+##{% if cookiecutter.use_app_dev %}
+#pull repositories/{{cookiecutter.prjname}}
+##{% endif %}
 {% if cookiecutter.use_lino_dev %}
 pull repositories/lino
 pull repositories/xl

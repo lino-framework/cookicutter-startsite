@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-from lino.projects.std.settings import *
+from {{ cookiecutter.app_settings }} import *
 
 import logging
 logging.getLogger('weasyprint').setLevel("ERROR") # see #1462

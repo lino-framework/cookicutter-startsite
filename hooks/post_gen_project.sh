@@ -21,9 +21,17 @@ pip3 install -U setuptools
 mkdir $REPOSDIR
 cd $REPOSDIR
 
-{% if cookiecutter.use_app_dev %}
-git clone https://github.com/lino-framework/{{ cookiecutter.appname }}.git
-pip install -e {{ cookiecutter.appname }}
+##{% if cookiecutter.use_app_dev %}
+##git clone https://github.com/lino-framework/{{ cookiecutter.appname }}.git
+##pip install -e {{ cookiecutter.appname }}
+##{% endif %}
+
+{% if cookiecutter.app_git_repo %}
+appname = ${ cookiecutter.app_git_repo ##*:}
+git clone {{ cookiecutter.app_git_repo }}
+pip install -e $appname
+{% else %}
+pip install {{ cookiecutter.app_package }}
 {% endif %}
 
 {% if cookiecutter.use_lino_dev %}
@@ -51,3 +59,12 @@ apt-get install redis-server ; redis-server &
 pip3 install -e svn+https://svn.forge.pallavi.be/appy-dev/dev1#egg=appy
 pip3 install uwsgi
 
+{% if cookiecutter.db_engine == "mysql" %}
+apt install mysql-server libmysqlclient-dev python-dev libffi-dev libssl-dev
+pip3 install mysqlclient
+{% else  %}
+apt install postgresql postgresql-contrib 
+pip3 install psycopg2-binary
+{% endif  %}
+
+python {{ cookiecutter.prjname }}/manage.py prep --noinput
