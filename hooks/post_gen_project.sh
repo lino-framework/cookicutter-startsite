@@ -41,7 +41,7 @@ git clone https://github.com/lino-framework/xl.git
 pip install -e xl
 {% endif %}
 
-apt-get update && \
+sudo apt-get update && \
     apt-get upgrade -y && \ 	
     apt-get install -y \
 	git \
@@ -53,17 +53,17 @@ apt-get update && \
 	supervisor \
 	sqlite3 && \
 	pip3 install -U pip setuptools
-apt install -y libreoffice python3-uno tidy swig graphviz
+sudo apt install -y libreoffice python3-uno tidy swig graphviz
 libreoffice '--accept=socket,host=127.0.0.1,port=8100;urp;' & 
-apt-get install redis-server ; redis-server &
+sudo apt-get install redis-server ; redis-server &
 pip3 install -e svn+https://svn.forge.pallavi.be/appy-dev/dev1#egg=appy
 pip3 install uwsgi
 
 {% if cookiecutter.db_engine == "mysql" %}
-apt install mysql-server libmysqlclient-dev python-dev libffi-dev libssl-dev
+sudo apt install mysql-server libmysqlclient-dev python-dev libffi-dev libssl-dev
 pip3 install mysqlclient
 {% else  %}
-apt install postgresql postgresql-contrib 
+sudo apt install postgresql postgresql-contrib 
 pip3 install psycopg2-binary
 {% endif  %}
 
