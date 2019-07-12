@@ -33,4 +33,4 @@ git clone https://github.com/lino-framework/xl.git
 pip install -e xl
 {% endif %}
 
-# python /root/{{ cookiecutter.prjname }}/manage.py prep --noinput
+python /getlino/{{ cookiecutter.prjname }}/manage.py prep --noinput
