@@ -3,20 +3,16 @@
 # License: BSD (see file COPYING for details)
 #
 
-ENVDIR=env
-REPOSDIR=repositories
-USERGROUP=www-data
-
-sudo chown :$USERGROUP .
-chmod g+wx .
-
-mkdir $REPOSDIR
-cd $REPOSDIR
+mkdir {{ cookiecutter.reposdir }}
+cd {{ cookiecutter.reposdir }}
 
 ##{% if cookiecutter.use_app_dev %}
 ##git clone https://github.com/lino-framework/{{ cookiecutter.appname }}.git
 ##pip install -e {{ cookiecutter.appname }}
 ##{% endif %}
+
+## Activate the virtualenv
+. {{ cookiecutter.projects_root }}/{{ cookiecutter.envdir }}/bin/activate
 
 {% if cookiecutter.app_git_repo %}
 appname = ${ cookiecutter.app_git_repo ##*:}

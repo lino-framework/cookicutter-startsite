@@ -6,7 +6,7 @@ logging.getLogger('weasyprint').setLevel("ERROR") # see #1462
 
 
 class Site(Site):
-    title = "Lino@prj1"
+    title = "{{ cookiecutter.prjname }}"
     server_url = "{{cookiecutter.server_url}}"
 
 SITE = Site(globals())

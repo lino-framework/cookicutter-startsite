@@ -2,6 +2,7 @@
   "prjname": "mysite",
   "appname": "noi",
   "envdir":"env",
+  "reposdir":"repositories",
   "projects_root":"/usr/local/lino",
   "app_git_repo": "https://github.com/lino-framework/noi",
   "app_package": "lino_noi",
