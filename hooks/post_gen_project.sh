@@ -15,9 +15,8 @@ cd {{ cookiecutter.reposdir }}
 . {{ cookiecutter.projects_root }}/{{ cookiecutter.prjname }}/{{ cookiecutter.envdir }}/bin/activate
 
 {% if cookiecutter.app_git_repo %}
-appname = ${ cookiecutter.app_git_repo ##*:}
 git clone {{ cookiecutter.app_git_repo }}
-pip install -e $appname
+pip install -e {{  cookiecutter.appname }}
 {% else %}
 pip install {{ cookiecutter.app_package }}
 {% endif %}
@@ -28,5 +27,3 @@ pip install -e lino
 git clone https://github.com/lino-framework/xl.git
 pip install -e xl
 {% endif %}
-
-python {{ cookiecutter.projects_root }}/{{ cookiecutter.prjname }}/manage.py prep --noinput
