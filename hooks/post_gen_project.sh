@@ -12,7 +12,7 @@ cd {{ cookiecutter.reposdir }}
 ##{% endif %}
 
 ## Activate the virtualenv
-. {{ cookiecutter.projects_root }}/{{ cookiecutter.envdir }}/bin/activate
+. {{ cookiecutter.projects_root }}/{{ cookiecutter.prjname }}/{{ cookiecutter.envdir }}/bin/activate
 
 {% if cookiecutter.app_git_repo %}
 appname = ${ cookiecutter.app_git_repo ##*:}
