@@ -25,7 +25,7 @@ DATABASES = {
         'PORT': 3306,
         {% if cookiecutter.db_engine == "mysql" %}
         'OPTIONS': {
-           "init_command": "SET storage_engine=MyISAM",
+           "init_command": "SET default_storage_engine=MyISAM",
         }
         {% endif  %}
 }
