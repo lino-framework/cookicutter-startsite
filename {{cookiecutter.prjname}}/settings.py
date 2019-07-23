@@ -11,6 +11,10 @@ class Site(Site):
 
 SITE = Site(globals())
 
+{ % if not cookiecutter.prod %}
+DEBUG = True
+{ % endif %}
+
 # locally override attributes of individual plugins
 # SITE.plugins.finan.suggest_future_vouchers = True
 
@@ -28,5 +32,5 @@ DATABASES = {
            "init_command": "SET default_storage_engine=MyISAM",
         }
         {% endif  %}
-}
+    }
 }
