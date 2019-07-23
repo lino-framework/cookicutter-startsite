@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 from {{cookiecutter.app_settings_module}} import *
+from lino_local.settings import *
 
 import logging
 logging.getLogger('weasyprint').setLevel("ERROR") # see #1462
@@ -15,22 +16,21 @@ SITE = Site(globals())
 DEBUG = True
 { % endif %}
 
-# locally override attributes of individual plugins
-# SITE.plugins.finan.suggest_future_vouchers = True
-
-# MySQL
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.{{cookiecutter.db_engine}}',
-        'NAME': '{{cookiecutter.db_name}}', #database name
+        'NAME': '{{cookiecutter.db_name}}',
         'USER': '{{cookiecutter.db_user}}',
         'PASSWORD': '{{cookiecutter.db_password}}',
         'HOST': 'localhost',                  
         'PORT': 3306,
-        {% if cookiecutter.db_engine == "mysql" %}
+        {%- if cookiecutter.db_engine == "mysql" %}
         'OPTIONS': {
            "init_command": "SET default_storage_engine=MyISAM",
         }
-        {% endif  %}
+        {% endif -%}
     }
 }
+
+EMAIL_SUBJECT_PREFIX = '[{{cookiecutter.prjname}}] '
+
