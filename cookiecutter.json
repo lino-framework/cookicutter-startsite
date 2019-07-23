@@ -1,13 +1,13 @@
 {
   "prjname": "mysite",
   "appname": "noi",
-  "app": null,
+  "projects_root":"/usr/local/lino",
+  "project_dir":"/usr/local/lino/mysite",
   "env_dir":"env",
   "repos_dir":"repositories",
-  "projects_root":"/usr/local/lino",
   "app_git_repo": "https://github.com/lino-framework/noi",
   "app_package": "lino_noi",
-  "app_settings": "lino_noi.lib.noi.settings",
+  "app_settings_module": "lino_noi.lib.noi.settings",
   "use_app_dev": "y",
   "use_lino_dev": "n",
   "server_url": "https://{{cookiecutter.prjname}}.mydomain.com",
@@ -17,5 +17,4 @@
   "db_user": "lino",
   "db_password": "1234",
   "db_name": "{{cookiecutter.prjname}}",
-  "usergroup": "www-data"
 }
