@@ -2,29 +2,19 @@
 # Copyright 2015-2019 Rumma & Ko Ltd
 # License: BSD (see file COPYING for details)
 #
-# Run `pip --update` for this environment. 
-# Run `git pull` on repositories in develop mode (`pip -e`)
+# Update the application source code in this environment.
+# Runs either `pip --update` or `git pull` depending on the options specified during startsite.
 # Also remove all `*.pyc` files in these repositories.
-#
-# NOTE THIS IS A TEMPLATE TO BE COPIED TO A PRODUCTION SITE.
-# YOU SHOULD ADAPT IT MANUALLY AND THEN REMOVE THIS NOTE.
 
 set -e
 umask 0007
 
-PRJDIR=`pwd`
-
-. env/bin/activate
-
-echo "Run pull.sh in $PRJDIR" >> freeze.log
-date >> freeze.log
-pip freeze >> freeze.log
-
-pip install -U lino
-pip install -U xl
+PRJDIR={{cookiecutter.projects_root}}/{{cookiecutter.prjname}}
+ENVDIR=$PRJDIR/{{cookiecutter.env_dir}}
+REPOS=$ENVDIR/{{cookiecutter.repos_dir}}
 
 function pull() {
-    repo=$1
+    repo=$REPOS/$1
     cd $repo
     pwd
     git pull
@@ -32,12 +22,29 @@ function pull() {
     cd $PRJDIR
 }
 
+cd $PRJDIR
 
-##{% if cookiecutter.use_app_dev %}
-#pull repositories/{{cookiecutter.prjname}}
-##{% endif %}
+. $ENVDIR/bin/activate
+
+
+echo "Run pull.sh in $PRJDIR" >> freeze.log
+date >> freeze.log
+pip freeze >> freeze.log
+
+
 {% if cookiecutter.use_lino_dev %}
-pull repositories/lino
-pull repositories/xl
-{% endif %}
+pull lino
+pull xl
+{% else  %}
+pip install -U lino
+pip install -U xl
+{% endif  %}
+
+
+{% if cookiecutter.use_app_dev %}
+pull {{cookicutter.repo_nickname}}
+{% else  %}
+pip install -U {{cookicutter.app_package}}
+{% endif  %}
+
 

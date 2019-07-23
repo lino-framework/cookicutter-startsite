@@ -13,9 +13,10 @@ set -e  # exit on error
 # WARNING: all files older than 60 days in ARCHDIR will be deleted
 # without confirmation
 
-PROJECT_DIR=/path/to/myproject
-ARCH_DIR=/var/backups/lino/myproject
-ENVDIR=$PROJECT_DIR/env
+
+PROJECT_DIR={{cookiecutter.projects_root}}/{{cookiecutter.prjname}}
+ARCH_DIR=/var/backups/lino/{{cookiecutter.prjname}}
+ENVDIR=$PROJECT_DIR/{{cookiecutter.env_dir}}
 
 # edit the following lines if you also want to include a MySQL dump
 # MYSQL_USERNAME=
