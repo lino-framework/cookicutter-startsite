@@ -18,6 +18,6 @@
   "db_password" : "1234",
   "db_name" : "mysite",
   "db_host" : "localhost",
-  "db_port" : ,
+  "db_port" : 0,
   "python_path" : ""
 }
