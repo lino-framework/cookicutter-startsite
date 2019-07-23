@@ -1,8 +1,9 @@
 {
   "prjname": "mysite",
   "appname": "noi",
-  "envdir":"env",
-  "reposdir":"repositories",
+  "app": null,
+  "env_dir":"env",
+  "repos_dir":"repositories",
   "projects_root":"/usr/local/lino",
   "app_git_repo": "https://github.com/lino-framework/noi",
   "app_package": "lino_noi",
