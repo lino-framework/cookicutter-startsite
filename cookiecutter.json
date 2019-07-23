@@ -11,10 +11,13 @@
   "use_app_dev" : true,
   "use_lino_dev" : false,
   "server_url" : "https://{{cookiecutter.prjname}}.mydomain.com",
-  "admin_full_name" : "Joe Dow",
+  "admin_name" : "Joe Dow",
   "admin_email" : "joe@example.com",
   "db_engine" : ["mysql", "postgresql"],
   "db_user" : "mysite",
   "db_password" : "1234",
-  "db_name" : "mysite"
+  "db_name" : "mysite",
+  "db_host" : "localhost",
+  "db_port" : ,
+  "python_path" : ""
 }
