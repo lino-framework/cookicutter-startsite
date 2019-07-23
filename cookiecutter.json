@@ -11,6 +11,7 @@
   "use_app_dev" : true,
   "use_lino_dev" : false,
   "server_url" : "https://{{cookiecutter.prjname}}.mydomain.com",
+  "server_domain": "{{cookiecutter.prjname}}.mydomain.com",
   "admin_name" : "Joe Dow",
   "admin_email" : "joe@example.com",
   "db_engine" : ["mysql", "postgresql"],
