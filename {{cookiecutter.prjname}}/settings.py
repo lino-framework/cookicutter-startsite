@@ -1,12 +1,12 @@
 # -*- coding: UTF-8 -*-
-from {{ cookiecutter.app_settings }} import *
+from {{cookiecutter.app.settings_module}} import *
 
 import logging
 logging.getLogger('weasyprint').setLevel("ERROR") # see #1462
 
 
 class Site(Site):
-    title = "{{ cookiecutter.prjname }}"
+    title = "{{cookiecutter.prjname}}"
     server_url = "{{cookiecutter.server_url}}"
 
 SITE = Site(globals())
