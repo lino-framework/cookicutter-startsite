@@ -22,8 +22,8 @@ DATABASES = {
         'NAME': '{{cookiecutter.db_name}}',
         'USER': '{{cookiecutter.db_user}}',
         'PASSWORD': '{{cookiecutter.db_password}}',
-        'HOST': 'localhost',                  
-        'PORT': 3306,
+        'HOST': '{{cookiecutter.db_host}}',
+        'PORT': {{cookiecutter.db_port}},
         {%- if cookiecutter.db_engine == "mysql" %}
         'OPTIONS': {
            "init_command": "SET default_storage_engine=MyISAM",
