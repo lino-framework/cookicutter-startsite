@@ -12,9 +12,9 @@ class Site(Site):
 
 SITE = Site(globals())
 
-{ % if not cookiecutter.prod %}
+{% if not cookiecutter.prod %}
 DEBUG = True
-{ % endif %}
+{% endif %}
 
 DATABASES = {
     'default': {
