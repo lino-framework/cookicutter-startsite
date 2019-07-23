@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-from {{cookiecutter.app.settings_module}} import *
+from {{cookiecutter.app_settings_module}} import *
 
 import logging
 logging.getLogger('weasyprint').setLevel("ERROR") # see #1462
