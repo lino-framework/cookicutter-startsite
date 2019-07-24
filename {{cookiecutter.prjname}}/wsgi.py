@@ -1,4 +1,4 @@
-import os
+import os, sys
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{cookiecutter.prjname}}.settings")
 {% if cookiecutter.python_path %}
 sys.path.insert(0, '{{cookiecutter.python_path}}')
