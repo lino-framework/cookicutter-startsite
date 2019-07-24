@@ -34,3 +34,4 @@ DATABASES = {
 
 EMAIL_SUBJECT_PREFIX = '[{{cookiecutter.prjname}}] '
 
+ALLOWED_HOSTS = ['{{cookiecutter.server_domain}}']
