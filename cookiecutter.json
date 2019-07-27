@@ -2,6 +2,7 @@
   "prjname" : "mysite",
   "appname" : "noi",
   "prod" : true,
+  "webdav" : true,
   "projects_root" : "/usr/local/lino",
   "project_dir" : "/usr/local/lino/mysite",
   "env_link" : "env",
