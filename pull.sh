@@ -31,11 +31,11 @@ echo "Run pull.sh in $PRJDIR ($VIRTUAL_ENV)" >> $LOGFILE
 date >> $LOGFILE
 pip freeze >> $LOGFILE
 
-{% for name in cookiecutter.dev_packages %}
+{% for name in cookiecutter.dev_packages.split() %}
 pull {{name}}
 {% endfor %}
 
-{% for name in cookiecutter.pip_packages %}
+{% for name in cookiecutter.pip_packages.split() %}
 pip install -U {{name}}
 {% endfor %}
 
