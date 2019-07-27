@@ -8,6 +8,7 @@
   "repos_link" : "repositories",
   "app_package" : "lino_noi",
   "app_settings_module" : "lino_noi.lib.noi.settings",
+  "django_settings_module" : "lino_local.mysite.settings",
   "dev_packages" : [],
   "pip_packages" : [],
   "server_url" : "https://{{cookiecutter.prjname}}.mydomain.com",
