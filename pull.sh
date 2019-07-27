@@ -26,11 +26,18 @@ cd $PRJDIR
 
 . $ENVDIR/bin/activate
 
+LOGFILE=$VIRTUAL_ENV/freeze.log
+echo "Run pull.sh in $PRJDIR ($VIRTUAL_ENV)" >> $LOGFILE
+date >> $LOGFILE
+pip freeze >> $LOGFILE
 
-echo "Run pull.sh in $PRJDIR" >> freeze.log
-date >> freeze.log
-pip freeze >> freeze.log
+{% for name in cookiecutter.dev_packages %}
+pull {{name}}
+{% endfor %}
 
+{% for name in cookiecutter.pip_packages %}
+pip install -U {{name}}
+{% endfor %}
 
 {% if cookiecutter.use_lino_dev %}
 pull lino

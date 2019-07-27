@@ -9,6 +9,9 @@ logging.getLogger('weasyprint').setLevel("ERROR") # see #1462
 class Site(Site):
     title = "{{cookiecutter.prjname}}"
     server_url = "{{cookiecutter.server_url}}"
+    {% if cookiecutter.webdav %}
+    webdav_protocol = 'wdav'
+    {% endif %}
 
 SITE = Site(globals())
 
