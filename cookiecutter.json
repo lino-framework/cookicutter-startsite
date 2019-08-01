@@ -24,6 +24,7 @@
   "db_port" : 0,
   "languages" : "en",
   "front_end" : "lino.modlib.extjs",
+  "secret_key" : "123456",
   "linod" : false,
   "python_path" : ""
 }
