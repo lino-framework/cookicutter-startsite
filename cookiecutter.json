@@ -22,5 +22,8 @@
   "db_name" : "mysite",
   "db_host" : "localhost",
   "db_port" : 0,
+  "languages" : "en",
+  "languages" : "en",
+  "linod" : False,
   "python_path" : ""
 }
