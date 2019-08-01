@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2015-2017 Luc Saffre
+# Copyright 2015-2019 Rumma & Ko Ltd
 # License: BSD (see file COPYING for details)
 #
 # Make a snapshot of a Lino database.
@@ -14,8 +14,8 @@ set -e  # exit on error
 # without confirmation
 
 
-PROJECT_DIR={{cookiecutter.projects_root}}/{{cookiecutter.prjname}}
-ARCH_DIR=/var/backups/lino/{{cookiecutter.prjname}}
+PROJECT_DIR={{cookiecutter.project_dir}}
+ARCH_DIR={{cookiecutter.backups_base}}/{{cookiecutter.prjname}}
 ENVDIR=$PROJECT_DIR/{{cookiecutter.env_dir}}
 
 # edit the following lines if you also want to include a MySQL dump
@@ -24,12 +24,12 @@ ENVDIR=$PROJECT_DIR/{{cookiecutter.env_dir}}
 # MYSQL_DBNAME=
 
 # Directory where to put the temporary snapshot files.
-# This is relative to PROJECT_DIR 
+# This is relative to PROJECT_DIR
 # WARNING: everything in this directory will be deleted without confirmation
 SNAPSHOTDIR=snapshot
 
 # name of target zip file to be created:
-# This is relative to PROJECT_DIR 
+# This is relative to PROJECT_DIR
 ZIPFILE=snapshot.zip
 
 if [ ! -d "$PROJECT_DIR" ]; then
@@ -60,7 +60,7 @@ fi
 
 if [ -d $SNAPSHOTDIR ]
   then
-    rm $SNAPSHOTDIR/* 
+    rm $SNAPSHOTDIR/*
     rmdir $SNAPSHOTDIR
 fi
 
@@ -80,4 +80,3 @@ zip $ZIPFILE *.py *.sh
 
 # delete all files older than 60 days in ARCHDIR:
 find $ARCH_DIR -maxdepth 1 -depth -name '*.zip' -mtime +60 -delete
-

@@ -9,7 +9,7 @@
 set -e
 umask 0007
 
-PRJDIR={{cookiecutter.projects_root}}/{{cookiecutter.prjname}}
+PRJDIR={{cookiecutter.project_dir}}
 ENVDIR=$PRJDIR/{{cookiecutter.env_dir}}
 REPOS=$ENVDIR/{{cookiecutter.repos_dir}}
 
@@ -53,5 +53,3 @@ pull {{cookicutter.repo_nickname}}
 {% else  %}
 pip install -U {{cookicutter.app_package}}
 {% endif  %}
-
-
