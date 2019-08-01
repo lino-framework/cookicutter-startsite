@@ -24,6 +24,6 @@
   "db_port" : 0,
   "languages" : "en",
   "languages" : "en",
-  "linod" : False,
+  "linod" : false,
   "python_path" : ""
 }
