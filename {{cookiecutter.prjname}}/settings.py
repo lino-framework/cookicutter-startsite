@@ -12,12 +12,20 @@ class Site(Site):
     {% if cookiecutter.webdav %}
     webdav_protocol = 'wdav'
     {% endif %}
+    {% if cookiecutter.languages %}
+    languages = '{{cookiecutter.languages}}'
+    {% endif %}
+    use_linod = {{cookiecutter.linod}}
+    default_ui = '{{cookiecutter.front_end}}'
 
 SITE = Site(globals())
 
 {% if not cookiecutter.prod %}
 DEBUG = True
 {% endif %}
+
+SECRET_KEY = '{{cookiecutter.secret_key}}'
+
 
 DATABASES = {
     'default': {
