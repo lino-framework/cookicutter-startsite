@@ -10,8 +10,8 @@ set -e
 umask 0007
 
 PRJDIR={{cookiecutter.project_dir}}
-ENVDIR=$PRJDIR/{{cookiecutter.env_dir}}
-REPOS=$ENVDIR/{{cookiecutter.repos_dir}}
+ENVDIR=$PRJDIR/{{cookiecutter.env_link}}
+REPOS=$ENVDIR/{{cookiecutter.repos_link}}
 
 function pull() {
     repo=$REPOS/$1
@@ -35,21 +35,6 @@ pip freeze >> $LOGFILE
 pull {{name}}
 {% endfor %}
 
-{% for name in cookiecutter.pip_packages.split() %}
-pip install -U {{name}}
-{% endfor %}
-
-{% if cookiecutter.use_lino_dev %}
-pull lino
-pull xl
-{% else  %}
-pip install -U lino
-pip install -U xl
-{% endif  %}
-
-
-{% if cookiecutter.use_app_dev %}
-pull {{cookicutter.repo_nickname}}
-{% else  %}
-pip install -U {{cookicutter.app_package}}
-{% endif  %}
+{% if cookiecutter.pip_packages %}
+pip install -U {{name}} {{cookiecutter.pip_packages}}
+{% endif %}
