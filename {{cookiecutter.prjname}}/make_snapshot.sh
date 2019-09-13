@@ -16,7 +16,7 @@ set -e  # exit on error
 
 PROJECT_DIR={{cookiecutter.project_dir}}
 ARCH_DIR={{cookiecutter.backups_base}}/{{cookiecutter.prjname}}
-ENVDIR=$PROJECT_DIR/{{cookiecutter.env_dir}}
+ENVDIR=$PROJECT_DIR/{{cookiecutter.env_link}}
 
 # edit the following lines if you also want to include a MySQL dump
 # MYSQL_USERNAME=
