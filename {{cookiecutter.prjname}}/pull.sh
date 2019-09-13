@@ -36,5 +36,5 @@ pull {{name}}
 {% endfor %}
 
 {% if cookiecutter.pip_packages %}
-pip install -U {{name}} {{cookiecutter.pip_packages}}
+pip install -U {{cookiecutter.pip_packages}}
 {% endif %}
