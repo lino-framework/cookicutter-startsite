@@ -20,12 +20,13 @@ class Site(Site):
 
 SITE = Site(globals())
 
-{% if not cookiecutter.prod %}
+{% if cookiecutter.server_domain == "localhost" %}
 DEBUG = True
+{% else %}
+DEBUG = False
 {% endif %}
 
 SECRET_KEY = '{{cookiecutter.secret_key}}'
-
 
 DATABASES = {
     'default': {
