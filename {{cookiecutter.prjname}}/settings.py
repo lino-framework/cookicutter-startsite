@@ -18,6 +18,11 @@ class Site(Site):
     use_linod = {{cookiecutter.linod}}
     default_ui = '{{cookiecutter.front_end}}'
 
+    def get_plugin_configs(self):
+        yield super(Site, self).get_plugin_configs()
+        # example of local plugin settings:
+        # yield ('ledger', 'start_year', 2018)
+
 SITE = Site(globals())
 
 {% if cookiecutter.server_domain == "localhost" %}
