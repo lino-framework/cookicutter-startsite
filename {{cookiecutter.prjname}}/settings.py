@@ -35,7 +35,11 @@ SECRET_KEY = '{{cookiecutter.secret_key}}'
 
 DATABASES = {
     'default': {
+        {%- if cookiecutter.db_engine == "postgresql" %}
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        {% else %}
         'ENGINE': 'django.db.backends.{{cookiecutter.db_engine}}',
+        {% endif -%}
         'NAME': '{{cookiecutter.db_name}}',
         'USER': '{{cookiecutter.db_user}}',
         'PASSWORD': '{{cookiecutter.db_password}}',
