@@ -37,10 +37,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.{{cookiecutter.db_engine}}',
         'NAME': '{{cookiecutter.db_name}}',
+        {%- if cookiecutter.db_engine != "sqlite3" %}
         'USER': '{{cookiecutter.db_user}}',
         'PASSWORD': '{{cookiecutter.db_password}}',
         'HOST': '{{cookiecutter.db_host}}',
         'PORT': {{cookiecutter.db_port}},
+        {% endif -%}
         {%- if cookiecutter.db_engine == "mysql" %}
         'OPTIONS': {
            "init_command": "SET default_storage_engine=MyISAM",
