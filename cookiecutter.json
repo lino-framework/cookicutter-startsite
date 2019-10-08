@@ -24,7 +24,7 @@
   "repos_link" : "repositories",
   "admin_name" : "Joe Dow",
   "admin_email" : "joe@example.com",
-  "db_engine" : ["mysql", "postgresql"],
+  "db_engine" : ["sqlite3", "mysql", "postgresql"],
   "db_user" : "mysite",
   "db_password" : "1234",
   "db_name" : "mysite",
